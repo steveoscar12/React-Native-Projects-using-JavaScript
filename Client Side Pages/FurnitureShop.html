@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Simple HTML Document</title>
+</head>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap");
+
+:root {
+  --matte-white: rgb(253, 251, 249);
+  --matte-black: rgb(31, 31, 31);
+  --matte-cyan: rgb(0, 255, 255);
+}
+html {
+  scroll-behavior: smooth;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--matte-black);
+  font-family: "Open Sans", sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+}
+.section-margin {
+  margin: 4rem auto 4rem auto;
+}
+
+/* ============Nav-Bar=========== */
+#nav-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--matte-black);
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 50px;
+}
+
+/* -----------logo----------- */
+.logo {
+  margin-left: 10px;
+  cursor: pointer;
+  color: var(--matte-white);
+  font-size: 2rem;
+  transition: all 0.3s ease-in;
+}
+.cyan-font {
+  color: var(--matte-cyan);
+}
+.logo:hover {
+  color: var(--matte-cyan);
+}
+/* --------nav-link-------- */
+.nav1 ul {
+  height: 55px;
+  display: flex;
+  align-items: center;
+}
+#click {
+  display: none;
+}
+.nav1 ul li {
+  list-style: none;
+  padding: 0 20px;
+}
+.nav1 ul li a {
+  color: var(--matte-white);
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+.nav1 ul li a:hover {
+  color: var(--matte-cyan);
+}
+.btn {
+  border-style: none;
+  font-size: 16px;
+  width: auto;
+  padding: 5px 20px;
+  background: var(--matte-white);
+  color: var(--matte-black);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.btn:hover {
+  background-color: var(--matte-cyan);
+}
+/* ---------mobile-nav-bar---------- */
+.nav1 .menu-btn i {
+  color: var(--matte-white);
+  font-size: 25px;
+  display: none;
+}
+hr {
+  margin: 0rem 1.9rem;
+  opacity: 0.5;
+}
+/* ============media query nav =============*/
+@media (max-width: 770px) {
+  .container {
+    padding: 0px 25px;
+  }
+  .logo {
+    font-size: 1.5rem;
+  }
+  .nav1 {
+    padding: 1rem;
+  }
+  .nav1 .menu-btn i {
+    display: block;
+  }
+  .nav1 ul {
+    top: 58px;
+    left: -100%;
+    position: fixed;
+    display: block;
+    text-align: center;
+    height: 100vh;
+    width: 70vw;
+    background-color: var(--matte-white);
+    transition: all 0.3s ease;
+    z-index: 1;
+  }
+  #click:checked ~ ul {
+    left: 0%;
+  }
+
+  #click:checked ~ .menu-btn i:before {
+    content: "\f00d";
+  }
+  .nav1 ul li {
+    margin: 70px;
+    padding: 0px;
+  }
+  .nav1 ul li a {
+    font-size: 17px;
+    color: var(--matte-black);
+  }
+  
+  .btn {
+    font-size: 22px;
+    color: var(--matte-white);
+    background-color: var(--matte-black);
+  }
+  .btn:hover {
+    color: var(--matte-black);
+    background-color: var(--matte-cyan);
+  }
+}
+
+/* ===========hero-section============ */
+#hero {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 0.7rem;
+}
+#hero .content {
+  margin: 1.5rem;
+}
+#hero .content h1 {
+  font-size: 3.5rem;
+
+  color: var(--matte-white);
+}
+
+#hero .content .explore {
+  font-size: 1.5rem;
+  width: auto;
+  color: var(--matte-white);
+  text-decoration: none;
+  background-color: var(--matte-cyan);
+  margin-top: 2rem;
+  padding: 10px 20px;
+  border-style: none;
+  color: var(--matte-black);
+  background-color: var(--matte-white);
+  font-weight: 520;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+#hero .content .explore:hover {
+  background-color: var(--matte-cyan);
+}
+#hero img {
+  margin: 1.4rem;
+}
+
+/* ==============media hero============ */
+
+@media (max-width: 900px) {
+  #hero {
+    flex-direction: column;
+    grid-template-columns: 1fr;
+  }
+  #hero .content h1 {
+    font-size: 2.3rem;
+  }
+  #hero img {
+    width: 450px;
+  }
+  #hero .content .explore {
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 400px) {
+  #hero img {
+    width: 300px;
+  }
+}
+/* ==============how work============== */
+#how-work {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.7rem;
+  padding: 2rem;
+}
+
+.wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.work {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 270px;
+  width: 250px;
+  border-bottom: 3px solid var(--matte-cyan);
+  color: var(--matte-white);
+  background-color: rgb(51, 51, 51);
+  padding: 1.5rem;
+  text-align: center;
+  gap: 1rem;
+}
+.work h3 {
+  color: var(--matte-cyan);
+}
+.work h4 {
+  font-size: 1.5rem;
+}
+ a {
+  color: var(--matte-cyan);
+}
+
+/* =============video============== */
+h3 {
+  font-size: 2.5rem;
+  color: var(--matte-white);
+}
+#perfect {
+  margin: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#perfect > iframe {
+  max-width: 560px;
+  width: 100%;
+  margin-top: 30px;
+  transition: all 0.3s ease;
+}
+
+#perfect #video:hover {
+  transform: scale(1.06);
+}
+@media (max-width: 750px) {
+  h3 {
+    font-size: 2rem;
+  }
+}
+
+/* ================contact us=============== */
+#contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#contact p {
+  font-size: 1.5rem;
+  color: var(--matte-cyan);
+  text-align: center;
+  margin: 7px;
+  margin-bottom: 28px;
+}
+#form {
+  display: flex;
+  gap: 3rem;
+  margin: 2rem;
+}
+#email {
+  font-size: 1.5rem;
+  height: 70x;
+  outline: none;
+  border: none;
+  padding: 15px 7px;
+  border-radius: 5px;
+}
+.sub-btn {
+  border-style: none;
+  font-size: 1.5rem;
+  width: auto;
+  padding: 10px 20px;
+  background: var(--matte-white);
+  color: var(--matte-black);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.sub-btn:hover {
+  background-color: var(--matte-cyan);
+}
+
+@media (max-width: 750px) {
+  #form {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+/* =============Top Design============ */
+#top-design {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#top-design h3 {
+  margin: 25px;
+}
+#top-design .design-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+#top-design .design-grid .area {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: all 0.3s ease;
+}
+#top-design .design-grid .area:hover {
+  transform: scale(1.06);
+}
+
+#top-design .design-grid .area p {
+  font-size: 1rem;
+  color: var(--matte-white);
+  text-decoration: underline;
+  text-decoration-color: var(--matte-cyan);
+}
+
+/* ===========featured product=========== */
+#featured {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#featured h3 {
+  margin: 25px;
+}
+#featured .product-grid {
+  display: flex;
+  gap: 35px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+  transition: all 0.3s ease;
+}
+
+#featured .product-grid .product {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+#featured .product-grid :hover {
+  transition: all 0.3s ease;
+  transform: scale(1.05);
+}
+#featured .product-grid .product h4 {
+  font-size: 1.2rem;
+  color: var(--matte-white);
+  text-decoration: underline;
+  text-decoration-color: var(--matte-cyan);
+}
+#featured .product-grid .product p {
+  font-size: 0.8rem;
+  color: var(--matte-white);
+}
+.fa-star {
+  color: var(--matte-white);
+}
+.checked {
+  color: var(--matte-cyan);
+}
+.star-rate {
+  font-size: 0.8rem;
+}
+
+/* =================footer================= */
+footer {
+  margin: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction:column;
+  height: 50px;
+  color: var(--matte-white);
+  font-size: 16px;
+  opacity: 70%;
+  text-align: center;
+}
+
+</style>
+<body>
+<script src="https://kit.fontawesome.com/9d1a3267eb.js" crossorigin="anonymous"></script>
+
+<header>
+  <nav id="nav-bar">
+    <div class="container">
+      <div class="logo">
+        <img src="" class="header-img">furniished<span class="cyan-font">.</span>
+      </div>
+
+      <div class="nav1">
+        <input type="checkbox" id="click">
+        <label for="click" class="menu-btn">
+          <i class="fas fa-bars"></i>
+        </label>
+        <ul>
+
+          <li><a class="nav-link" href="#top-design">Top design</a></li>
+          <li><a class="nav-link" href="#contact">Contact us</a></li>
+          <li><a class="nav-link" href=""><i class="fas fa-shopping-cart"></i></a></li>
+          <li><button type="submit" href="s.html" class="btn">Sign In</button></li>
+
+        </ul>
+      </div>
+    </div>
+    <hr>
+  </nav>
+
+</header>
+<main>
+  <section id="hero">
+    <div class="content">
+      <h1><span class="cyan-font"> Custom furniture<br></span> for your Dream Home!</h1>
+      <button type="button" class="explore">Explore More</button>
+    </div>
+    <div><img src="https://images.unsplash.com/photo-1596900779744-2bdc4a90509a?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=540&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjIxNjczNjIz&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=600" alt=""></div>
+  </section>
+  <hr>
+  <section id="how-work" class="section-margin">
+    <div>
+      <h3>How we work<span class="cyan-font">.</span></h3>
+    </div>
+    <div class="wrap">
+
+      <div class="work">
+        <h3>
+          <i class="fas fa-envelope-square"></i>
+        </h3>
+        <h4>
+          Contact Us.
+        </h4>
+        <p>we will help you out with your prefrence</p>
+        <a class="nav-link" href="#contact">Contact Now</a></li>
+      </div>
+      <div class="work">
+        <h3>
+          <i class="fas fa-ruler-combined"></i>
+        </h3>
+        <h4>
+          We Visit,We Design.
+        </h4>
+        <p>As per your prefrence our experts will design your home furnitures</p>
+      </div>
+      <div class="work">
+        <h3>
+          <i class="fas fa-chair"></i>
+        </h3>
+        <h4>
+          Order Furniture
+        </h4>
+        <p>Liked Design?Get your custom Furniture delivered within days</p>
+      </div>
+    </div>
+  </section>
+  <hr>
+  <section id="perfect" class="section-margin">
+    <h3>Perfection matters a lot<span class="cyan-font">.</span></h3>
+    <iframe id="video" height="315" src="https://www.youtube.com/embed/S-A0qLTxf-U?controls=0" frameborder="0" allowfullscreen></iframe>
+  </section>
+  <hr>
+
+  <section id="top-design" class="section-margin">
+    <h3>Top Design<span class="cyan-font">.</span></h3>
+    <div class="design-grid">
+      <div class="area">
+        <img src="https://source.unsplash.com/OtXADkUh3-I/260x300" alt="">
+        <p> by Bridget Brown<span class="cyan-font">.</span></p>
+      </div>
+      <div class="area">
+        <img src="https://source.unsplash.com/nzwaWv_Vnxw/260x300" alt="">
+        <p> by Christine Nicholls<span class="cyan-font">.</span></p>
+      </div>
+      <div class="area">
+        <img src="https://source.unsplash.com/g01h0WtY22s/260x300" alt="">
+        <p> by Harley Lipsey<span class="cyan-font">.</span></p>
+      </div>
+      <div class="area">
+        <img src="https://source.unsplash.com/_ylenZL2u7M/260x300" alt="">
+        <p> by Shana Adkins<span class="cyan-font">.</span></p>
+
+      </div>
+    </div>
+    </div>
+  </section>
+  <hr>
+  <section id="featured" class="section-margin">
+    <h3>Featured Products<span class="cyan-font">.</span></h3>
+    <div class="product-grid">
+      <div class="product">
+        <img src="https://source.unsplash.com/Ry9WBo3qmoc/300x300" alt="">
+        <p>featured<span class="cyan-font">.</span></p>
+        <h4>Showcase Lamp</h4>
+        <p>Ceiling lamp, white 46cm (18")</p>
+        <h4>$99</h4>
+        <div class="star-rate"><span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+        </div>
+
+      </div>
+      <div class="product">
+        <img src="https://source.unsplash.com/BayIzHKkjM4/300x300" alt="">
+        <p>featured<span class="cyan-font">.</span></p>
+        <h4>Drawer Table</h4>
+        <p>Table, black-brown/white 120x60cm <br>(47 1/4x23 5/8 ")</p>
+        <h4>$349</h4>
+        <div class="star-rate"><span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+        </div>
+      </div>
+      <div class="product">
+        <img src="https://source.unsplash.com/Ki8zTDuIOqg/300x300" alt="">
+        <p>featured<span class="cyan-font">.</span></p>
+        <h4>Square Clock</h4>
+        <p>Wall clock, white25 cm (9   ")</p>
+        <h4>$150</h4>
+        <div class="star-rate"><span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+        </div>
+      </div>
+
+    </div>
+    </div>
+    </div>
+  </section>
+  <hr>
+
+  <section id="contact" class="section-margin">
+    <h3>Contact Us<span class="cyan-font">.</span></h3>
+    <p>We'll help you out with Your Custom Furniture</p>
+    <form id="form" action=" https://www.freecodecamp.com/email-submit">
+      <input name="email" id="email" type="email" placeholder="Email address" required />
+      <input id="submit" type="submit" value="Submit" class="sub-btn" />
+    </form>
+  </section>
+  <hr>
+</main>
+<!--
+<footer class="section-margin">
+  Copyright   2021
+  <br> All Rights Reserved by furniished.<br><p class="text-center"><small>Background Images from<a target="_blank" href="https://unsplash.com/"> Unplash Source</a></small>
+    </p>
+</footer>
+-->
+</body>
+</html>
