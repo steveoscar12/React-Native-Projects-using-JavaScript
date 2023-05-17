@@ -11,11 +11,11 @@ export default class App extends Component {
     return (
       <Router>
         <Scene key="root">
-          <Scene key="LoginScreen" component={LoginScreen} left={()=>null} title="Mureed" initial={true} />
-          <Scene key="SignupScreen" component={SignupScreen} left={()=>null} title="Mureed" />
-          <Scene key="ListScreen" component={ListScreen} left={()=>null} title="Mureed" />
-          <Scene key="NewScreen" component={NewScreen} left={()=>null} title="Mureed" />
-          <Scene key="ViewScreen" component={ViewScreen} left={()=>null} title="Mureed" />
+          <Scene key="LoginScreen" component={LoginScreen} left={()=>null} title="Steve" initial={true} />
+          <Scene key="SignupScreen" component={SignupScreen} left={()=>null} title="Steve" />
+          <Scene key="ListScreen" component={ListScreen} left={()=>null} title="Steve" />
+          <Scene key="NewScreen" component={NewScreen} left={()=>null} title="Steve" />
+          <Scene key="ViewScreen" component={ViewScreen} left={()=>null} title="Steve" />
         </Scene>
       </Router>
     )
